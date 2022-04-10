@@ -1,0 +1,34 @@
+{
+    "exp_base": "/mnt/fs6/honglinc/experiments_data",
+    "debug": false,
+    "exp_name": "imagenet_ft",
+    "exp_id": "res18_trans",
+    "agent": "ImageNetFineTuneAgent",
+    "cuda": true,
+    "gpu_device": [0],
+    "seed": 1337,
+    "data_loader_workers": 32,
+    "data_params": {
+        "image_size": 224,
+        "image_augment": true,
+        "ten_crop": false
+    },
+    "model_params": {
+        "out_dim": 128,
+        "resnet_version": "preact-resnet18"
+    },
+    "optim_params": {
+        "batch_size": 128,
+        "learning_rate": 0.01,
+        "lr_decay_schedule": [50, 80],
+        "lr_decay_rate": 0.1,
+        "momentum": 0.9,
+        "weight_decay": 1e-4,
+        "validate_freq": 1
+    },
+    "num_epochs": 90,
+    "validate": true,
+    "copy_checkpoint_freq": null,
+    "trained_agent_exp_dir": "/mnt/fs6/honglinc/experiments_data/experiments/imagenet_la/res18_LA",
+    "continue_exp_dir": null
+}
