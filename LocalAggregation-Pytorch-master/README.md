@@ -1,9 +1,8 @@
 # Local Aggregation for Unsupervised Learning of Visual Embeddings
 
-This is a Pytorch re-implementation of the Local Aggregation (LA) algorithm ([Paper](https://arxiv.org/abs/1903.12355)).
-The Tensorflow version can be found [here](https://github.com/neuroailab/LocalAggregation), which is implemented by the paper author.
+This is a Pytorch re-implementation of the Local Aggregation (LA) algorithm.
 
-**Note:** ~~This implementation is still under testing, although it's almost validated.~~ This implementation has been validated!
+This implementation has been validated!
 
 # Usage
 
