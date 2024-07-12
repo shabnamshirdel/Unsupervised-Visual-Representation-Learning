@@ -1,16 +1,14 @@
 # Unsupervised Learning of Visual Embeddings
 
-This is a Pytorch re-implementation of the Local Aggregation algorithm.
-
-
 ### Prerequisites
 
 * Pytorch 1.2.0
 * Ubuntu 16.04
-* [Faiss==1.6.1](https://github.com/facebookresearch/faiss)
-* dotmap
-* * tqdm
+* Faiss==1.6.1
 * tensorboardX
+* dotmap
+* tqdm
+
 
 ### Runtime Setup
 ```
