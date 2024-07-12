@@ -1,18 +1,15 @@
-# Local Aggregation for Unsupervised Learning of Visual Embeddings
+# Unsupervised Learning of Visual Embeddings
 
-This is a Pytorch re-implementation of the Local Aggregation (LA) algorithm.
+This is a Pytorch re-implementation of the Local Aggregation algorithm.
 
-This implementation has been validated!
-
-# Usage
 
 ### Prerequisites
 
-* Ubuntu 16.04
 * Pytorch 1.2.0
+* Ubuntu 16.04
 * [Faiss==1.6.1](https://github.com/facebookresearch/faiss)
-* tqdm
 * dotmap
+* * tqdm
 * tensorboardX
 
 ### Runtime Setup
@@ -22,20 +19,19 @@ source init_env.sh
 
 ### Model training
 
-This implementation currently supports LA trained ResNets. We have tested this implementation for ResNet-18. 
-As LA algorithm requires training the model using IR algorithm for 10 epochs as a warm start, we first run the IR training using the following command:
+This implementation is designed to support ResNets trained with the LA algorithm, and we have validated it with ResNet-18. The LA algorithm necessitates a preliminary 10-epoch training phase with the IR algorithm as a warm start, which is initiated using the command below:
 ```
 CUDA_VISIBLE_DEVICES=0 python scripts/instance.py ./config/imagenet_ir.json
 ```
-Then specify `instance_exp_dir` in `./config/imagenet_la.json` and run the following command to do the LA training:
+Set instance_exp_dir in ./config/imagenet_la.json and execute the following command to start LA training:
 ```
 CUDA_VISIBLE_DEVICES=0 python scripts/localagg.py ./config/imagenet_la.json
 ```
-By default, both IR and LA are trained using a single GPU. Multi-gpu training is also supported in this implementation.
+The default setting trains both IR and LA using a single GPU, though multi-GPU training is also available.
 
 
 ### Transfer learning 
-After finishing the LA training, run the following command to do the transfer learning to ImageNet:
+Once LA training is finished, execute the following command to start the transfer learning process for ImageNet:
 ```
 CUDA_VISIBLE_DEVICES=0 python scripts/finetune.py ./config/imagenet_ft.json
 ```
