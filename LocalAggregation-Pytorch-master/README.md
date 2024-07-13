@@ -1,4 +1,4 @@
-# Unsupervised Learning of Visual Embeddings
+# Unsupervised Visual Representation Learning
 
 ### Prerequisites
 
